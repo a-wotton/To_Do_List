@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ToDoList from './toDoList.js';
+import {ToDo} from './toDoItem.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
