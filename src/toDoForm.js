@@ -6,21 +6,20 @@ const [formData, setFormData] = useState("");
 function handleSubmit(e) {
     e.preventDefault();
     addToDo(formData);
-    setFormData("")
+    setFormData("");
 }
 
     return (
-    <div>
+    <div id="container">
     <header>
     <h1>To Do List:</h1>
     </header>
     <form id="add-todo-form">
-    <label for="add">Title:</label>
     <div id="add-bar">
     <input 
     onChange={(e) => setFormData(e.target.value)}
-    id="bar" name="add" type="text"/>
-    <input onClick={handleSubmit} className="submit" type="submit" value="Add"></input>
+    id="bar" name="add" type="text" value={formData} placeholder="Add a Task"/>
+    <input onClick={handleSubmit} className="submit" type="submit" value="Add +"></input>
     </div>
     </form>
     </div>
