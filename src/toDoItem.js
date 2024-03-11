@@ -1,14 +1,15 @@
 import { FaTrashCan } from "react-icons/fa6";
 
-export function ToDo({task}) {
+export function ToDo({task, deleteToDo}) {
+
     return (
-        <ul id="item-list">
-            <li>
+            <div id="item-list">
                 {task.title}
-                <FaTrashCan className="icon"/>
-            </li>
-        </ul>
+                <FaTrashCan onClick={() => deleteToDo(task.id)} className="icon"/>
+            </div>
     )
 }
+
+
 
 
