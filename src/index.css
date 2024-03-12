@@ -94,6 +94,42 @@ h1 {
     cursor: pointer;
 }
 
+.checkbox {
+    opacity: 0;
+    position: absolute;
+    z-index: 10;
+    width: 20px;
+    height: 20px;
+}
+
+.custom-box {
+    width: 19.25px;
+    scale: 70%;
+    background-color: #fff;
+    border-radius: 100%;
+    border: 4px solid #fff;
+}
+
+.custom-box:hover {
+    cursor: pointer;
+}
+
+.checkbox:checked ~ .custom-box{
+    transition: all 0.5s ease;
+    background-color: rgb(84, 84, 191);
+}
+
+#item-list[value="true"] {
+    transition: all 0.5s ease;
+    background-color: rgb(70, 70, 70);
+}
+
+#item-list[value="false"] {
+    transition: all 0.5s ease;
+    background-color: rgb(68, 68, 163);
+}
+
+
 
 
 
