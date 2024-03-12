@@ -17,6 +17,11 @@ function ToDoList() {
         setItems(items.filter(item => item.id !== id));
     }
 
+    // function handleChange() {
+    //     setItems(items.filter(item => item.isCompleted = true));
+    //     console.log(items);
+    // }
+
     return(
         <div>
             <ToDoForm addToDo={addToDo}/>
