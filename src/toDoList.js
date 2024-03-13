@@ -6,11 +6,16 @@ import {v4 as uuidv4} from 'uuid';
 uuidv4();
 
 function ToDoList() {
-    const [items, setItems] = useState([])
+    const [items, setItems] = useState([]);
+    const [errmsg, SetErrmsg] = useState("") 
 
     function addToDo(item) {
-        setItems([...items, {id: uuidv4(), title: item, isCompleted: false}])
-        console.log(items);
+        if (item.length < 30) {
+            setItems([...items, {id: uuidv4(), title: item, isCompleted: false}])
+            SetErrmsg("");
+        } else{
+            SetErrmsg("Must be under 30 characters long.");
+        }
     }
 
     function deleteToDo(id) {
@@ -25,6 +30,7 @@ function ToDoList() {
     return(
         <div>
             <ToDoForm addToDo={addToDo}/>
+            <p id="error">{errmsg}</p>
             {items.map((item, index) => (
                 <ToDo task={item} key={index} deleteToDo={deleteToDo}/>
             ))}
