@@ -10,17 +10,20 @@ function ToDoList() {
     const [errmsg, SetErrmsg] = useState("") 
 
     function addToDo(item) {
-        if (item.length < 30) {
+        if (item.length < 30 && item.length > 1) {
             setItems([...items, {id: uuidv4(), title: item, isCompleted: false}])
             SetErrmsg("");
-        } else{
-            SetErrmsg("Must be under 30 characters long.");
+        } else if (item.length > 30) {
+            SetErrmsg("Must be under 30 characters.");
+        } else if (item.length < 1) {
+            SetErrmsg("Must contain text.");
         }
     }
 
     function deleteToDo(id) {
         setItems(items.filter(item => item.id !== id));
     }
+
 
     // function handleChange() {
     //     setItems(items.filter(item => item.isCompleted = true));
